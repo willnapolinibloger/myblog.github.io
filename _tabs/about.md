@@ -5,8 +5,6 @@ order: 4
 ---
 
 <!-- ![About](/assets/img/headers/digitalden2.webp) -->
-  
-# About
 
 Hey, I’m Will — a lifelong learner, bookworm, and content creator who’s passionate about distilling powerful ideas from great books into actionable insights.
 
