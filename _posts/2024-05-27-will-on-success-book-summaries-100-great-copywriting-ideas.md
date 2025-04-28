@@ -1,6 +1,5 @@
 ---
 title: "Will On Success: 100 Great Copywriting Ideas by Andy Maslen"
-author: Will Napolini
 date: 2024-04-09 20:55:00 +0800
 categories: [Mindset, Book-summaries]
 tags:
