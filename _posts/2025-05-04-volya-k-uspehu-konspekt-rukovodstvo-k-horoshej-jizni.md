@@ -32,7 +32,7 @@ tags:
   ]
 image: https://pbs.twimg.com/media/GqHErHTWEAA9N0V?format=jpg&name=4096x4096
 alt: "Путь к хорошей жизни: Древнее искусство стоической радости"
-pin: false
+pin: true
 fallback:
   -
   # Замените на URL вашей резервной картинки
