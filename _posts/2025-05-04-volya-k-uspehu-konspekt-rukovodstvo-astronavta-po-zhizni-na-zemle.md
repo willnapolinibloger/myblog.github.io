@@ -33,7 +33,7 @@ tags:
   ]
 image: https://pbs.twimg.com/media/GqHqBPmXQAAuWLE?format=jpg&name=4096x4096
 alt: "Руководство астронавта по жизни на Земле: Чему меня научил космос о находчивости, решимости и готовности ко всему"
-pin: false
+pin: true
 fallback:
   -
   # Замените на URL вашей резервной картинки
