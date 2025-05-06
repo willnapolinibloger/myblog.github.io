@@ -31,7 +31,7 @@ tags:
   ]
 image: https://pbs.twimg.com/media/GqLpKLrXsAEIBLF?format=jpg&name=4096x4096
 alt: "Стань Генератором Идей: Валюта XXI века"
-pin: false
+pin: true
 fallback:
   -
   # Замените на URL вашей резервной картинки
