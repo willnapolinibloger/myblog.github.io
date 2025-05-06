@@ -31,7 +31,7 @@ tags:
   ]
 image: https://pbs.twimg.com/media/GqL0--NWsAEVKso?format=jpg&name=4096x4096
 alt: "Лучше, чем раньше: Как формируются привычки и меняется жизнь"
-pin: false
+pin: true
 fallback:
   -
   # Замените на URL вашей резервной картинки
