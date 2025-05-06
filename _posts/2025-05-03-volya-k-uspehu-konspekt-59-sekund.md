@@ -34,7 +34,7 @@ tags:
   ]
 image: https://pbs.twimg.com/media/GqHA1NAXIAAyKK6?format=jpg&name=4096x4096
 alt: "59 секунд до перемен: Простые решения для большой жизни"
-pin: false
+pin: true
 fallback:
   -
   # Замените на URL вашей резервной картинки
