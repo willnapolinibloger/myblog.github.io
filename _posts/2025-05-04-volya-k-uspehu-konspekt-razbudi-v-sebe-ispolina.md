@@ -29,7 +29,7 @@ tags:
   ]
 image: https://pbs.twimg.com/media/GqH_W5UWgAAf8KZ?format=jpg&name=4096x4096
 alt: "Пробуди в себе исполина: Как взять под контроль ум, эмоции, тело и финансовую судьбу"
-pin: false
+pin: true
 fallback:
   -
   # Замените на URL вашей резервной картинки
