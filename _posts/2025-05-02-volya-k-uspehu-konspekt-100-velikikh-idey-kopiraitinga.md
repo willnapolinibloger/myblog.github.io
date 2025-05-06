@@ -26,6 +26,7 @@ tags: [
 ]
 image: https://pbs.twimg.com/media/GqDAeoIWIAA9qLI?format=jpg&name=4096x4096  # Замени на актуальную обложку книги при необходимости
 alt: "Формула идеального текста: Как 100 идей от мирового эксперта преобразят ваш маркетинг"
+pin: false
 fallback:
   - 
   - 
