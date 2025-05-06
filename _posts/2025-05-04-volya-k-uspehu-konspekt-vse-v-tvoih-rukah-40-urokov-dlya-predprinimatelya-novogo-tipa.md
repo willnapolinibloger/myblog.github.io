@@ -32,7 +32,7 @@ tags:
   ]
 image: https://pbs.twimg.com/media/GqKwIw7WIAAcO-B?format=jpg&name=4096x4096
 alt: "Всё в твоих руках: 40 уроков для нового типа предпринимателя"
-pin: false
+pin: true
 fallback:
   -
   # Замените на URL вашей резервной картинки
