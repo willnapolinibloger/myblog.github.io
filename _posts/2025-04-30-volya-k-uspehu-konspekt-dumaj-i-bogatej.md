@@ -26,9 +26,9 @@ tags: [
     личные-достижения,
     предпринимательство
 ]
-pin: true
 image: https://pbs.twimg.com/media/GpueRuCX0AASf3f?format=jpg&name=4096x4096
 alt: "Думай и Богатей: 13 Принципов Успеха по Наполеону Хиллу"
+pin: true
 fallback:
   - # URL запасного изображения
   - # URL дополнительного запасного изображения
