@@ -21,6 +21,7 @@ tags: [
 ]
 image: https://pbs.twimg.com/media/GqC7N_wWsAAPdiO?format=jpg&name=4096x4096  # (пример — замени на актуальное изображение обложки книги)
 alt: "100 Удивительных Способов Повысить Написание Своим Стилем По Совету Гари Провоста"
+pin: true
 fallback:
   - 
   - 
