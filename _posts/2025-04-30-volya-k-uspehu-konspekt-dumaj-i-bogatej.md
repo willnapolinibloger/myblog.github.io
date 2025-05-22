@@ -973,21 +973,5 @@ fallback:
     transform: none;
   }
 
-  <!-- CTA Banner -->
-{% include banner.html 
-   type="default"
-   icon="fas fa-book"
-   title="Get the Full Book"
-   content="Want to read more insights like this? Check out the complete book for deeper understanding."
-   button_text="Buy on Amazon"
-   button_url="https://www.litres.ru/book/liz-nudzhent/razoblachenie-olivera-rayana-71944468/"
-   button_target="_blank"
-   button_icon="fas fa-external-link-alt"
-   glow=true
-%}
   
-  .quote-image-wrapper::before {
-    transform: none;
-  }
-}
-</style>
+{% include quote-image.html src="https://res.cloudinary.com/dqpwi2gat/image/upload/v1747480405/8-rules-love-jay-shetty-willonsuccess-book-cover_ocrs4w.png" %}
