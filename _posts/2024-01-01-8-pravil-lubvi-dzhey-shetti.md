@@ -170,7 +170,7 @@ fallback:
 
 <div class="cta-container">
   <div class="cta-wrapper">
-    <h2 class="cta-title">🔥Бесплатный чек-лист🔥</h2>
+    <h3 class="cta-title">🔥Бесплатный чек-лист🔥</h3>
     <p class="cta-subtitle">
       <strong>«10 вопросов, чтобы понять себя в любви»</strong> — забирай и начни лучше разбираться в своих чувствах.
     </p>
