@@ -54,6 +54,8 @@ fallback:
   </div>
 </div>
 
+---
+
 ### **2. Ты ждёшь «того самого» человека? Это твоя неисцелённая часть**  
 Знакомо: «Вот встречу свою половинку — и заживём!» А Шварц говорит: **«Тот, кого ты ждёшь — это ты»**. Точнее, твоя **цельная, исцелённая версия**.  
 
@@ -66,6 +68,8 @@ fallback:
         </p>
     </div>
 </div>  
+
+---
 
 ### **3. Не борись с собой — объединяйся**  
 Когда ты злишься на себя за прокрастинацию или слабость, ты **усиливаешь внутренний конфликт**. Вместо этого **поблагодари** свою «ленивую» часть — может, она просто хочет отдыха?  
@@ -80,6 +84,8 @@ fallback:
     </div>
 </div>  
 
+---
+
 ### **4. Твои «недостатки» — это замороженные ресурсы**  
 Ты считаешь себя «трусливым»? А может, эта часть когда-то **спасла тебя** от опасной ситуации? Ты «лентяй»? Или твоя психика просто **экономит энергию**?  
 
@@ -91,6 +97,8 @@ fallback:
         <p>❌ <em class="box-quote">«Я тревожный»</em> → ✅ <em class="box-quote">«Я чуткий и осторожный»</em></p>
     </div>
 </div>
+
+---
 
 ### **5. Лидер внутри тебя — это «Я»**  
 Шварц называет это **«Самость»** — твоя мудрая, спокойная суть. Это как **внутренний Путин** (только без политики), который может **примирить все части** и принять решение.  
@@ -847,3 +855,487 @@ fallback:
 🔹 **И помни:** Тот, кого ты ждёшь… уже здесь. 😉  
 
 **Обнял, вдохновил, отпустил!** 🚀
+
+
+---
+
+<div class="modern-book-card">
+    <div class="book-content">
+        <div class="book-image-container">
+            <img src="https://cdn.litres.ru/pub/c/cover_415/48514275.webp" alt="Atomic Habits book cover" class="book-cover">
+        </div>
+        <div class="book-info">
+            <h3 class="book-title">📚 Атомные привычки — Джеймс Клир</h3>
+            <p class="book-description">Маленькие изменения, которые меняют вашу жизнь: пошаговое руководство по формированию хороших привычек и избавлению от плохих.</p>
+            <ul class="book-features">
+                <li class="feature-item">✅ Простые и проверенные техники</li>
+                <li class="feature-item">✅ Научный подход к изменению поведения</li>
+                <li class="feature-item">✅ Практические советы для повседневной жизни</li>
+            </ul>
+        </div>
+    </div>
+    
+  <div class="book-actions">
+        <a href="https://www.amazon.com/dp/B07RFSSYBH?tag=ваш_партнёрский_тег" target="_blank" class="buy-button amazon">
+            Amazon
+        </a>
+        <a href="https://www.litres.ru/pages/biblio_book/?art=ваш_партнёрский_код" target="_blank" class="buy-button litres">
+            ЛитРес
+        </a>
+        <a href="https://www.ozon.ru/product/ваш_партнёрский_код" target="_blank" class="buy-button ozon">
+            Озон
+        </a>
+    </div>
+    
+  <p class="disclaimer">
+        *Мы можем получать комиссию при покупке по этим ссылкам. Спасибо за поддержку!
+    </p>
+</div>
+
+<style>
+.modern-book-card {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0;
+    border-radius: 20px;
+    background: var(--main-bg, white);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-color, #333);
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    
+    /* Animated gradient border */
+    border: 3px solid transparent;
+    background: linear-gradient(var(--main-bg, white), var(--main-bg, white)) padding-box,
+                linear-gradient(135deg, 
+                  rgba(0, 255, 237, 0.8) 0%,
+                  rgba(0, 184, 186, 1) 50%,
+                  rgba(0, 122, 204, 0.8) 100%) border-box;
+    background-size: 100% 100%, 200% 200%;
+    animation: gradient-shift 4s ease-in-out infinite;
+}
+
+.modern-book-card::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 237, 0.3) 0%,
+        rgba(0, 184, 186, 0.25) 50%,
+        rgba(0, 122, 204, 0.3) 100%
+    );
+    filter: blur(20px);
+    z-index: -1;
+    border-radius: 24px;
+    opacity: 0.8;
+    animation: glow-pulse 3s ease-in-out infinite alternate;
+}
+
+.modern-book-card:hover {
+    transform: translateY(-3px);
+}
+
+.modern-book-card:hover::before {
+    opacity: 1;
+    filter: blur(25px);
+}
+
+.book-content {
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.book-image-container {
+    flex-shrink: 0;
+    position: relative;
+}
+
+.book-cover {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 184, 186, 0.2);
+    transition: all 0.3s ease;
+}
+
+.book-cover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(0, 184, 186, 0.3);
+}
+
+.book-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.book-title {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #00FFED 0%, #007acc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.book-description {
+    margin: 0 0 1rem 0;
+    color: var(--text-color, #333);
+    opacity: 0.9;
+}
+
+.book-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-item {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    position: relative;
+    transition: transform 0.2s ease;
+    color: var(--text-color, #333);
+}
+
+.feature-item:hover {
+    transform: translateX(5px);
+}
+
+.book-actions {
+    padding: 0 2rem 1.5rem 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.buy-button {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.85rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    font-size: 1rem;
+}
+
+.buy-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.buy-button:hover::before {
+    left: 100%;
+}
+
+.buy-button.amazon {
+    background: linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007acc 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 184, 186, 0.3);
+}
+
+.buy-button.litres {
+    background: linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007acc 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 184, 186, 0.3);
+}
+
+.buy-button.ozon {
+    background: linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007acc 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 184, 186, 0.3);
+}
+
+.buy-button:hover {
+    transform: translateY(-2px);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(0, 184, 186, 0.4);
+}
+
+.disclaimer {
+    padding: 0 2rem 1.5rem 2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted, #666);
+    margin: 0;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Gradient animations */
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 100% 100%, 0% 50%;
+    }
+    50% {
+        background-position: 100% 100%, 100% 50%;
+    }
+}
+
+@keyframes glow-pulse {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+/* Dark theme compatibility */
+[data-mode="dark"] .modern-book-card {
+    background: linear-gradient(var(--main-bg, #1b1b1e), var(--main-bg, #1b1b1e)) padding-box,
+                linear-gradient(135deg, 
+                  rgba(0, 255, 237, 1) 0%,
+                  rgba(0, 184, 186, 1.2) 50%,
+                  rgba(0, 122, 204, 1) 100%) border-box;
+    color: var(--text-color, #e5e5e5);
+}
+
+[data-mode="dark"] .modern-book-card::before {
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 237, 0.4) 0%,
+        rgba(0, 184, 186, 0.35) 50%,
+        rgba(0, 122, 204, 0.4) 100%
+    );
+}
+
+[data-mode="dark"] .book-description {
+    color: var(--text-color, #e5e5e5);
+}
+
+[data-mode="dark"] .feature-item {
+    color: var(--text-color, #e5e5e5);
+}
+
+[data-mode="dark"] .disclaimer {
+    color: var(--text-muted, #b0b0b0);
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .modern-book-card {
+        margin: 1rem 0.5rem;
+        border-radius: 16px;
+    }
+
+    .modern-book-card::before {
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -6px;
+        filter: blur(10px);
+        border-radius: 20px;
+    }
+
+    .book-content {
+        padding: 1.5rem 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .book-cover {
+        width: 100px;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    .book-title {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    .book-description {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature-item {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .book-actions {
+        padding: 0 1rem 1rem 1rem;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .buy-button {
+        min-width: auto;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+
+    .disclaimer {
+        padding: 0 1rem 1.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .modern-book-card {
+        margin: 0.75rem 0.25rem;
+        border-radius: 14px;
+    }
+
+    .modern-book-card::before {
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        filter: blur(8px);
+        border-radius: 18px;
+    }
+
+    .book-content {
+        padding: 1.25rem 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .book-cover {
+        width: 80px;
+    }
+
+    .book-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .book-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .feature-item {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .book-actions {
+        padding: 0 0.75rem 0.75rem 0.75rem;
+        gap: 0.6rem;
+    }
+
+    .buy-button {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .disclaimer {
+        padding: 0 0.75rem 1.25rem 0.75rem;
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+}
+
+/* Large tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .modern-book-card {
+        margin: 1.5rem auto;
+    }
+
+    .book-content {
+        padding: 1.75rem;
+        gap: 1.25rem;
+    }
+
+    .book-cover {
+        width: 110px;
+    }
+
+    .book-actions {
+        padding: 0 1.75rem 1.25rem 1.75rem;
+        gap: 0.8rem;
+    }
+
+    .buy-button {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .buy-button {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+        min-height: 44px; /* iOS touch target guidelines */
+    }
+
+    .feature-item:hover {
+        transform: none;
+    }
+
+    .book-cover:hover {
+        transform: none;
+    }
+
+    .modern-book-card:hover {
+        transform: none;
+    }
+
+    .buy-button:hover {
+        transform: none;
+    }
+
+    /* Add active states for touch */
+    .buy-button:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .modern-book-card,
+    .modern-book-card::before,
+    .book-cover,
+    .feature-item,
+    .buy-button,
+    .buy-button::before {
+        transition: none;
+        animation: none;
+    }
+    
+    .modern-book-card:hover,
+    .book-cover:hover,
+    .feature-item:hover,
+    .buy-button:hover {
+        transform: none;
+    }
+    
+    .buy-button:hover::before {
+        left: -100%;
+    }
+}
+</style>
+
+---
