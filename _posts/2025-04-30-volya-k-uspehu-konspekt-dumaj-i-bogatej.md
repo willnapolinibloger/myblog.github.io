@@ -822,7 +822,7 @@ fallback:
 
 Ваш путь к процветанию уже начался. Продолжайте идти.
 
-div class="quote-image-wrapper">
+<div class="quote-image-wrapper">
   <img 
     src="https://res.cloudinary.com/dqpwi2gat/image/upload/v1747480405/8-rules-love-jay-shetty-willonsuccess-book-cover_ocrs4w.png" 
     alt="Цитата из книги" 
@@ -854,3 +854,4 @@ div class="quote-image-wrapper">
     }
   }
 </style>
+
