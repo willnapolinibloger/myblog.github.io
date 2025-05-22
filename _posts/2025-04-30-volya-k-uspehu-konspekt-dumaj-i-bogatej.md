@@ -822,62 +822,6 @@ fallback:
 
 Ваш путь к процветанию уже начался. Продолжайте идти.
 
-<div class="quote-image-wrapper with-linear-glow">
-  <img 
-    src="https://res.cloudinary.com/dqpwi2gat/image/upload/v1747480405/8-rules-love-jay-shetty-willonsuccess-book-cover_ocrs4w.png" 
-    alt="Цитата из книги" 
-    class="quote-image"
-  >
-</div>
-
-<style>
-  .quote-image-wrapper {
-    position: relative;
-    max-width: 720px;
-    margin: 3rem auto;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--card-border-color, #e0e0e0);
-    background-color: var(--card-bg, #fff);
-    z-index: 1;
-  }
-
-  .quote-image-wrapper.with-linear-glow::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120%;
-    height: 130%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(
-      90deg,
-      #00FFED4D,  /* ~30% opacity */
-      #00B8BA4D   /* ~30% opacity */
-    );
-    filter: blur(50px);
-    z-index: -1;
-    pointer-events: none;
-    border-radius: 16px;
-  }
-
-  .quote-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-  }
-
-  @media (max-width: 768px) {
-    .quote-image-wrapper {
-      margin: 2rem 1rem;
-    }
-  }
-</style>
-
-
-
-
 <div class="text-center my-4">
   <figure class="d-inline-block quote-image-wrapper">
     <img
@@ -898,6 +842,16 @@ fallback:
 .quote-image-wrapper {
   position: relative;
   transition: transform 0.3s ease;
+  border-radius: 12px;
+  padding: 3px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 237, 0.6) 0%,
+    rgba(0, 184, 186, 0.8) 50%,
+    rgba(79, 172, 254, 0.6) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease-in-out infinite;
 }
 
 .quote-image-wrapper::before {
@@ -909,29 +863,55 @@ fallback:
   bottom: -15px;
   background: linear-gradient(
     135deg,
-    rgba(79, 172, 254, 0.2) 0%,
-    rgba(0, 184, 186, 0.1) 50%,
-    transparent 100%
+    rgba(0, 255, 237, 0.3) 0%,
+    rgba(0, 184, 186, 0.2) 50%,
+    rgba(79, 172, 254, 0.3) 100%
   );
-  filter: blur(20px);
+  filter: blur(25px);
   z-index: -1;
-  border-radius: 12px;
-  opacity: 0;
+  border-radius: 16px;
+  opacity: 0.7;
   transition: opacity 0.4s ease;
+  animation: glow-pulse 2s ease-in-out infinite alternate;
 }
 
 .quote-image-wrapper:hover::before {
   opacity: 1;
+  filter: blur(30px);
 }
 
 .quote-image-wrapper:hover {
   transform: translateY(-3px);
+  background-size: 100% 100%;
 }
 
 .quote-image-wrapper img {
   position: relative;
   z-index: 1;
   transition: box-shadow 0.3s ease;
+  border-radius: 9px;
+  background: white;
+}
+
+/* Gradient animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
 }
 
 .quote-image-wrapper:hover img {
@@ -939,17 +919,30 @@ fallback:
 }
 
 /* Dark mode support for Chirpy */
-[data-mode="dark"] .quote-image-wrapper::before {
+[data-mode="dark"] .quote-image-wrapper {
   background: linear-gradient(
     135deg,
-    rgba(79, 172, 254, 0.3) 0%,
-    rgba(0, 184, 186, 0.2) 50%,
-    transparent 100%
+    rgba(0, 255, 237, 0.8) 0%,
+    rgba(0, 184, 186, 1) 50%,
+    rgba(79, 172, 254, 0.8) 100%
   );
 }
 
+[data-mode="dark"] .quote-image-wrapper::before {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 237, 0.4) 0%,
+    rgba(0, 184, 186, 0.3) 50%,
+    rgba(79, 172, 254, 0.4) 100%
+  );
+}
+
+[data-mode="dark"] .quote-image-wrapper img {
+  background: #1a1a1a;
+}
+
 [data-mode="dark"] .quote-image-wrapper:hover img {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 10px 30px rgba(0, 255, 237, 0.2) !important;
 }
 
 /* Mobile optimization */
@@ -973,11 +966,15 @@ fallback:
   .quote-image-wrapper::before,
   .quote-image-wrapper img {
     transition: none;
+    animation: none;
   }
   
   .quote-image-wrapper:hover {
     transform: none;
   }
+  
+  .quote-image-wrapper::before {
+    transform: none;
+  }
 }
 </style>
-
