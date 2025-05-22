@@ -14,7 +14,7 @@
 
 <style>
 .gradient-tip-card {
-    max-width: 600px;
+    min-width: 1200px;
     margin: 2rem auto;
     padding: 1.5rem;
     border-radius: 16px;
@@ -29,13 +29,13 @@
     align-items: flex-start;
     gap: 1rem;
     
-    /* Animated gradient border */
+    /* Animated gradient border with cyan-blue colors */
     border: 3px solid transparent;
     background: linear-gradient(var(--main-bg, white), var(--main-bg, white)) padding-box,
                 linear-gradient(135deg, 
-                  rgba(255, 193, 7, 0.8) 0%,
-                  rgba(255, 152, 0, 1) 50%,
-                  rgba(255, 87, 34, 0.8) 100%) border-box;
+                  rgba(0, 255, 237, 0.8) 0%,
+                  rgba(0, 184, 186, 1) 50%,
+                  rgba(0, 122, 204, 0.8) 100%) border-box;
     background-size: 100% 100%, 200% 200%;
     animation: gradient-shift 4s ease-in-out infinite;
 }
@@ -49,9 +49,9 @@
     bottom: -12px;
     background: linear-gradient(
         135deg,
-        rgba(255, 193, 7, 0.25) 0%,
-        rgba(255, 152, 0, 0.2) 50%,
-        rgba(255, 87, 34, 0.25) 100%
+        rgba(0, 255, 237, 0.25) 0%,
+        rgba(0, 184, 186, 0.2) 50%,
+        rgba(0, 122, 204, 0.25) 100%
     );
     filter: blur(16px);
     z-index: -1;
@@ -72,11 +72,11 @@
 .tip-icon {
     font-size: 2rem;
     flex-shrink: 0;
-    background: linear-gradient(135deg, #FFC107 0%, #FF9800 50%, #FF5722 100%);
+    background: linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007ACC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 2px 4px rgba(255, 152, 0, 0.3));
+    filter: drop-shadow(0 2px 4px rgba(0, 184, 186, 0.3));
     animation: icon-bounce 2s ease-in-out infinite;
 }
 
@@ -88,7 +88,7 @@
     margin: 0 0 0.5rem 0;
     font-size: 1.2rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #FF9800, #FF5722);
+    background: linear-gradient(135deg, #00B8BA, #007ACC);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -100,26 +100,26 @@
 }
 
 .tip-highlight {
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.3), rgba(255, 152, 0, 0.3));
+    background: linear-gradient(135deg, rgba(0, 255, 237, 0.3), rgba(0, 184, 186, 0.3));
     padding: 0.2rem 0.4rem;
     border-radius: 6px;
     font-weight: 600;
-    color: #E65100;
+    color: #006B7D;
     transition: all 0.2s ease;
 }
 
 .tip-highlight:hover {
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.5), rgba(255, 152, 0, 0.5));
+    background: linear-gradient(135deg, rgba(0, 255, 237, 0.5), rgba(0, 184, 186, 0.5));
     transform: scale(1.02);
 }
 
 .tip-quote {
     color: var(--text-muted, #555);
     font-style: italic;
-    background: linear-gradient(135deg, rgba(255, 152, 0, 0.1), rgba(255, 87, 34, 0.1));
+    background: linear-gradient(135deg, rgba(0, 184, 186, 0.1), rgba(0, 122, 204, 0.1));
     padding: 0.3rem 0.6rem;
     border-radius: 8px;
-    border-left: 3px solid #FF9800;
+    border-left: 3px solid #00B8BA;
     display: inline-block;
     margin-top: 0.5rem;
     position: relative;
@@ -128,7 +128,7 @@
 
 .tip-quote:hover {
     transform: translateX(3px);
-    background: linear-gradient(135deg, rgba(255, 152, 0, 0.2), rgba(255, 87, 34, 0.2));
+    background: linear-gradient(135deg, rgba(0, 184, 186, 0.2), rgba(0, 122, 204, 0.2));
 }
 
 .tip-quote::before {
@@ -137,7 +137,7 @@
     left: -8px;
     top: -5px;
     font-size: 1.5rem;
-    color: #FF9800;
+    color: #00B8BA;
     opacity: 0.6;
 }
 
@@ -147,7 +147,7 @@
     right: -8px;
     bottom: -10px;
     font-size: 1.5rem;
-    color: #FF9800;
+    color: #00B8BA;
     opacity: 0.6;
 }
 
@@ -185,18 +185,18 @@
 [data-mode="dark"] .gradient-tip-card {
     background: linear-gradient(var(--main-bg, #1b1b1e), var(--main-bg, #1b1b1e)) padding-box,
                 linear-gradient(135deg, 
-                  rgba(255, 193, 7, 1) 0%,
-                  rgba(255, 152, 0, 1.2) 50%,
-                  rgba(255, 87, 34, 1) 100%) border-box;
+                  rgba(0, 255, 237, 1) 0%,
+                  rgba(0, 184, 186, 1.2) 50%,
+                  rgba(0, 122, 204, 1) 100%) border-box;
     color: var(--text-color, #e5e5e5);
 }
 
 [data-mode="dark"] .gradient-tip-card::before {
     background: linear-gradient(
         135deg,
-        rgba(255, 193, 7, 0.3) 0%,
-        rgba(255, 152, 0, 0.25) 50%,
-        rgba(255, 87, 34, 0.3) 100%
+        rgba(0, 255, 237, 0.3) 0%,
+        rgba(0, 184, 186, 0.25) 50%,
+        rgba(0, 122, 204, 0.3) 100%
     );
 }
 
@@ -206,20 +206,20 @@
 
 [data-mode="dark"] .tip-quote {
     color: var(--text-muted, #b0b0b0);
-    background: linear-gradient(135deg, rgba(255, 152, 0, 0.15), rgba(255, 87, 34, 0.15));
+    background: linear-gradient(135deg, rgba(0, 184, 186, 0.15), rgba(0, 122, 204, 0.15));
 }
 
 [data-mode="dark"] .tip-quote:hover {
-    background: linear-gradient(135deg, rgba(255, 152, 0, 0.25), rgba(255, 87, 34, 0.25));
+    background: linear-gradient(135deg, rgba(0, 184, 186, 0.25), rgba(0, 122, 204, 0.25));
 }
 
 [data-mode="dark"] .tip-highlight {
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.4), rgba(255, 152, 0, 0.4));
-    color: #FFB74D;
+    background: linear-gradient(135deg, rgba(0, 255, 237, 0.4), rgba(0, 184, 186, 0.4));
+    color: #4DD0E1;
 }
 
 [data-mode="dark"] .tip-highlight:hover {
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.6), rgba(255, 152, 0, 0.6));
+    background: linear-gradient(135deg, rgba(0, 255, 237, 0.6), rgba(0, 184, 186, 0.6));
 }
 
 /* Mobile optimization */
