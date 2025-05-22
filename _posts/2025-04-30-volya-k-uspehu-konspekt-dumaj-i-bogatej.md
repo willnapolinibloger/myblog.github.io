@@ -822,7 +822,7 @@ fallback:
 
 Ваш путь к процветанию уже начался. Продолжайте идти.
 
-<div class="quote-image-wrapper">
+<div class="quote-image-wrapper with-linear-glow">
   <img 
     src="https://res.cloudinary.com/dqpwi2gat/image/upload/v1747480405/8-rules-love-jay-shetty-willonsuccess-book-cover_ocrs4w.png" 
     alt="Цитата из книги" 
@@ -832,13 +832,33 @@ fallback:
 
 <style>
   .quote-image-wrapper {
+    position: relative;
     max-width: 720px;
-    margin: 2rem auto;
-    border-radius: 12px;
+    margin: 3rem auto;
+    border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--card-border-color, #e0e0e0);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     background-color: var(--card-bg, #fff);
+    z-index: 1;
+  }
+
+  .quote-image-wrapper.with-linear-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 130%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(
+      90deg,
+      #00FFED4D,  /* ~30% opacity */
+      #00B8BA4D   /* ~30% opacity */
+    );
+    filter: blur(50px);
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 16px;
   }
 
   .quote-image {
@@ -850,8 +870,7 @@ fallback:
 
   @media (max-width: 768px) {
     .quote-image-wrapper {
-      margin: 1.5rem 1rem;
+      margin: 2rem 1rem;
     }
   }
 </style>
-
