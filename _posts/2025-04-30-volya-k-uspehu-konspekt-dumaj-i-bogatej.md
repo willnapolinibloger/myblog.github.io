@@ -874,3 +874,110 @@ fallback:
     }
   }
 </style>
+
+
+
+
+<div class="text-center my-4">
+  <figure class="d-inline-block quote-image-wrapper">
+    <img
+      src="https://res.cloudinary.com/dqpwi2gat/image/upload/v1747480405/8-rules-love-jay-shetty-willonsuccess-book-cover_ocrs4w.png"
+      alt="Quote from 8 Rules of Love by Jay Shetty"
+      class="img-fluid rounded shadow-lg"
+      loading="lazy"
+      width="720"
+      height="480"
+    >
+    <figcaption class="figure-caption text-center mt-2 text-muted">
+      <em>Quote from "8 Rules of Love" by Jay Shetty</em>
+    </figcaption>
+  </figure>
+</div>
+
+<style>
+.quote-image-wrapper {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.quote-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: linear-gradient(
+    135deg,
+    rgba(79, 172, 254, 0.2) 0%,
+    rgba(0, 184, 186, 0.1) 50%,
+    transparent 100%
+  );
+  filter: blur(20px);
+  z-index: -1;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.quote-image-wrapper:hover::before {
+  opacity: 1;
+}
+
+.quote-image-wrapper:hover {
+  transform: translateY(-3px);
+}
+
+.quote-image-wrapper img {
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease;
+}
+
+.quote-image-wrapper:hover img {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Dark mode support for Chirpy */
+[data-mode="dark"] .quote-image-wrapper::before {
+  background: linear-gradient(
+    135deg,
+    rgba(79, 172, 254, 0.3) 0%,
+    rgba(0, 184, 186, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+[data-mode="dark"] .quote-image-wrapper:hover img {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Mobile optimization */
+@media (max-width: 576px) {
+  .quote-image-wrapper::before {
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    filter: blur(12px);
+  }
+  
+  .quote-image-wrapper:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .quote-image-wrapper,
+  .quote-image-wrapper::before,
+  .quote-image-wrapper img {
+    transition: none;
+  }
+  
+  .quote-image-wrapper:hover {
+    transform: none;
+  }
+}
+</style>
+
