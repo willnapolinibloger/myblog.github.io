@@ -1,0 +1,304 @@
+// Modern Card Component for Jekyll Chirpy
+// Add this to your _sass directory or main scss file
+
+.modern-card {
+    max-width: 650px;
+    margin: 2rem auto;
+    padding: 0;
+    border-radius: 20px;
+    background: white;
+    font-family: inherit;
+    color: #333;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    
+    // Brand gradient border
+    border: 3px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, 
+                  rgba(0, 255, 237, 1) 0%,
+                  rgba(0, 184, 186, 1.2) 50%,
+                  rgba(0, 122, 204, 1) 100%) border-box;
+    background-size: 100% 100%, 300% 300%;
+    animation: brand-gradient 6s ease-in-out infinite;
+    box-shadow: 0 8px 32px rgba(0, 184, 186, 0.15);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        right: -15px;
+        bottom: -15px;
+        background: linear-gradient(
+            135deg,
+            rgba(0, 255, 237, 0.3) 0%,
+            rgba(0, 184, 186, 0.25) 50%,
+            rgba(0, 122, 204, 0.3) 100%
+        );
+        filter: blur(20px);
+        z-index: -1;
+        border-radius: 24px;
+        opacity: 0.6;
+        animation: love-glow 4s ease-in-out infinite alternate;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 48px rgba(0, 184, 186, 0.25);
+        
+        &::before {
+            opacity: 1;
+            filter: blur(25px);
+        }
+    }
+}
+
+.card-header {
+    background: linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007acc 100%);
+    padding: 2rem 2rem 1.5rem 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: romantic-shine 4s ease-in-out infinite;
+    }
+}
+
+.card-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #e0f7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-subtitle {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.95;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+.card-body {
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+
+    // Style markdown content inside cards
+    ul, ol {
+        padding-left: 0;
+        list-style: none;
+        counter-reset: item-counter;
+    }
+
+    li {
+        margin-bottom: 1rem;
+        padding: 1rem 1.5rem;
+        position: relative;
+        background: linear-gradient(135deg, rgba(0, 255, 237, 0.1), rgba(0, 122, 204, 0.05));
+        border-radius: 12px;
+        border-left: 4px solid transparent;
+        border-image: linear-gradient(135deg, #00FFED, #007acc) 1;
+        transition: all 0.3s ease;
+        counter-increment: item-counter;
+
+        &:before {
+            content: counter(item-counter);
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #00FFED, #007acc);
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 184, 186, 0.3);
+        }
+
+        &:hover {
+            transform: translateX(8px);
+            background: linear-gradient(135deg, rgba(0, 255, 237, 0.15), rgba(0, 122, 204, 0.1));
+            box-shadow: 0 4px 16px rgba(0, 184, 186, 0.2);
+        }
+    }
+
+    // For blockquotes (effect notes)
+    blockquote {
+        background: linear-gradient(135deg, rgba(0, 255, 237, 0.1), rgba(0, 122, 204, 0.1));
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        text-align: center;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+        position: relative;
+        font-size: 1.1rem;
+        margin: 2rem 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            background: linear-gradient(135deg, #00FFED, #007acc);
+            border-radius: 12px;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+    }
+
+    // Highlight spans
+    .highlight, mark {
+        background: linear-gradient(135deg, rgba(0, 255, 237, 0.3), rgba(0, 122, 204, 0.2));
+        padding: 0.2rem 0.5rem;
+        border-radius: 6px;
+        font-weight: 700;
+        color: #007acc;
+    }
+}
+
+// Animations
+@keyframes brand-gradient {
+    0%, 100% {
+        background-position: 100% 100%, 0% 50%;
+    }
+    33% {
+        background-position: 100% 100%, 50% 0%;
+    }
+    66% {
+        background-position: 100% 100%, 100% 50%;
+    }
+}
+
+@keyframes love-glow {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+}
+
+@keyframes romantic-shine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+// Dark mode support
+[data-mode="dark"] {
+    .modern-card {
+        background: linear-gradient(#2a2a2a, #2a2a2a) padding-box,
+                    linear-gradient(135deg, 
+                      rgba(0, 255, 237, 1) 0%,
+                      rgba(0, 184, 186, 1.2) 50%,
+                      rgba(0, 122, 204, 1) 100%) border-box;
+        color: #e5e5e5;
+    }
+
+    .card-body {
+        li {
+            background: linear-gradient(135deg, rgba(0, 255, 237, 0.15), rgba(0, 122, 204, 0.1));
+            color: #d0d0d0;
+
+            &:hover {
+                background: linear-gradient(135deg, rgba(0, 255, 237, 0.2), rgba(0, 122, 204, 0.15));
+            }
+        }
+
+        blockquote {
+            background: linear-gradient(135deg, rgba(0, 255, 237, 0.15), rgba(0, 122, 204, 0.15));
+        }
+    }
+}
+
+// Mobile optimization
+@media (max-width: 650px) {
+    .modern-card {
+        margin: 1rem 0;
+
+        &::before {
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            filter: blur(12px);
+        }
+    }
+
+    .card-header {
+        padding: 1.5rem 1.5rem 1.25rem 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+
+        li {
+            padding: 0.8rem 1rem;
+            margin-left: 0.5rem;
+
+            &:before {
+                left: -0.65rem;
+                width: 1.3rem;
+                height: 1.3rem;
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+    .modern-card,
+    .modern-card::before,
+    .card-header::before,
+    .card-body li {
+        transition: none;
+        animation: none;
+    }
+    
+    .modern-card:hover,
+    .card-body li:hover {
+        transform: none;
+    }
+}
