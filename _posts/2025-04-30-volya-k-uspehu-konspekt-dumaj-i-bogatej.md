@@ -821,3 +821,46 @@ fallback:
 Богатство начинается в голове. А реализуется — в действиях. Как сказал Хилл: *«Что разум может постигнуть и во что может поверить — того можно достичь»*.  
 
 Ваш путь к процветанию уже начался. Продолжайте идти.
+
+<div class="quote-image-block">
+    ![Motivational Quote by Richard Schwartz](https://res.cloudinary.com/dqpwi2gat/image/upload/v1747480405/8-rules-love-jay-shetty-willonsuccess-book-cover_ocrs4w.png)
+</div>
+
+<style>
+    .quote-image-block {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        background: #f8f9fa; /* Fallback if image fails to load */
+        border: 1px solid #e0e3e7;
+    }
+    
+    .quote-image-block img {
+        width: 100%;
+        height: auto;
+        display: block;
+        min-height: 200px; /* Prevents layout shift */
+        object-fit: cover; /* Optional: if using decorative background */
+    }
+    
+    /* Loading state */
+    .quote-image-block img {
+        background: linear-gradient(110deg, #f5f7fa 8%, #e6ebf5 18%, #f5f7fa 33%);
+        background-size: 200% 100%;
+        animation: 1.5s shine linear infinite;
+    }
+    
+    @keyframes shine {
+        to { background-position-x: -200%; }
+    }
+    
+    @media (max-width: 650px) {
+        .quote-image-block {
+            margin: 1.5rem;
+            border-radius: 8px;
+        }
+    }
+</style>
