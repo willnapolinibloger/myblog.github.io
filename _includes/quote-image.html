@@ -1,0 +1,168 @@
+<!-- _includes/quote-image.html -->
+<div class="text-center my-4">
+  <figure class="d-inline-block quote-image-wrapper{% if include.glow != false %} with-glow{% endif %}">
+    <img
+      src="{{ include.src }}"
+      alt="{{ include.alt | default: 'Quote from book' }}"
+      class="img-fluid rounded shadow-lg"
+      loading="lazy"
+      {% if include.width %}width="{{ include.width }}"{% else %}width="720"{% endif %}
+      {% if include.height %}height="{{ include.height }}"{% endif %}
+    >
+    {% if include.caption %}
+    <figcaption class="figure-caption text-center mt-2 text-muted">
+      <em>{{ include.caption }}</em>
+    </figcaption>
+    {% endif %}
+  </figure>
+</div>
+
+<style>
+.quote-image-wrapper {
+  position: relative;
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.quote-image-wrapper.with-glow {
+  padding: 3px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 237, 0.6) 0%,
+    rgba(0, 184, 186, 0.8) 50%,
+    rgba(79, 172, 254, 0.6) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+.quote-image-wrapper.with-glow::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 237, 0.3) 0%,
+    rgba(0, 184, 186, 0.2) 50%,
+    rgba(79, 172, 254, 0.3) 100%
+  );
+  filter: blur(25px);
+  z-index: -1;
+  border-radius: 16px;
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+  animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+.quote-image-wrapper.with-glow:hover::before {
+  opacity: 1;
+  filter: blur(30px);
+}
+
+.quote-image-wrapper:hover {
+  transform: translateY(-3px);
+}
+
+.quote-image-wrapper.with-glow:hover {
+  background-size: 100% 100%;
+}
+
+.quote-image-wrapper img {
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease;
+}
+
+.quote-image-wrapper.with-glow img {
+  border-radius: 9px;
+  background: white;
+}
+
+.quote-image-wrapper:hover img {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Gradient animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+/* Dark mode support for Chirpy */
+[data-mode="dark"] .quote-image-wrapper.with-glow {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 237, 0.8) 0%,
+    rgba(0, 184, 186, 1) 50%,
+    rgba(79, 172, 254, 0.8) 100%
+  );
+}
+
+[data-mode="dark"] .quote-image-wrapper.with-glow::before {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 237, 0.4) 0%,
+    rgba(0, 184, 186, 0.3) 50%,
+    rgba(79, 172, 254, 0.4) 100%
+  );
+}
+
+[data-mode="dark"] .quote-image-wrapper.with-glow img {
+  background: #1a1a1a;
+}
+
+[data-mode="dark"] .quote-image-wrapper:hover img {
+  box-shadow: 0 10px 30px rgba(0, 255, 237, 0.2) !important;
+}
+
+/* Mobile optimization */
+@media (max-width: 576px) {
+  .quote-image-wrapper.with-glow::before {
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    filter: blur(12px);
+  }
+  
+  .quote-image-wrapper:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .quote-image-wrapper,
+  .quote-image-wrapper::before,
+  .quote-image-wrapper img {
+    transition: none;
+    animation: none;
+  }
+  
+  .quote-image-wrapper:hover {
+    transform: none;
+  }
+  
+  .quote-image-wrapper::before {
+    transform: none;
+  }
+}
+</style>
