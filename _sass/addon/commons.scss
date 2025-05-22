@@ -1538,3 +1538,335 @@ search {
     }
   }
 } /* min-width: 1650px */
+
+
+/* ==========================================================================
+   GRADIENT BOX FRAMEWORK
+   ========================================================================== */
+
+/* Base gradient box styles */
+.gradient-box {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: var(--main-bg, white);
+    font-family: inherit;
+    color: var(--text-color, #333);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    position: relative;
+    transition: transform 0.3s ease;
+    
+    /* Animated gradient border */
+    border: 3px solid transparent;
+    background: linear-gradient(var(--main-bg, white), var(--main-bg, white)) padding-box,
+                linear-gradient(135deg, 
+                  rgba(0, 255, 237, 0.8) 0%,
+                  rgba(0, 184, 186, 1) 50%,
+                  rgba(0, 122, 204, 0.8) 100%) border-box;
+    background-size: 100% 100%, 200% 200%;
+    animation: gradient-shift 4s ease-in-out infinite;
+}
+
+.gradient-box::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 237, 0.3) 0%,
+        rgba(0, 184, 186, 0.25) 50%,
+        rgba(0, 122, 204, 0.3) 100%
+    );
+    filter: blur(20px);
+    z-index: -1;
+    border-radius: 20px;
+    opacity: 0.8;
+    animation: glow-pulse 3s ease-in-out infinite alternate;
+}
+
+.gradient-box:hover {
+    transform: translateY(-3px);
+}
+
+.gradient-box:hover::before {
+    opacity: 1;
+    filter: blur(25px);
+}
+
+/* Box variants */
+.gradient-box.tip-style {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.gradient-box.step-style {
+    overflow: hidden;
+    padding: 0;
+}
+
+.gradient-box.warning-style {
+    background: linear-gradient(var(--main-bg, white), var(--main-bg, white)) padding-box,
+                linear-gradient(135deg, 
+                  rgba(255, 193, 7, 0.8) 0%,
+                  rgba(255, 152, 0, 1) 50%,
+                  rgba(255, 87, 34, 0.8) 100%) border-box;
+}
+
+.gradient-box.warning-style::before {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 193, 7, 0.25) 0%,
+        rgba(255, 152, 0, 0.2) 50%,
+        rgba(255, 87, 34, 0.25) 100%
+    );
+}
+
+.gradient-box.success-style {
+    background: linear-gradient(var(--main-bg, white), var(--main-bg, white)) padding-box,
+                linear-gradient(135deg, 
+                  rgba(76, 175, 80, 0.8) 0%,
+                  rgba(139, 195, 74, 1) 50%,
+                  rgba(205, 220, 57, 0.8) 100%) border-box;
+}
+
+.gradient-box.success-style::before {
+    background: linear-gradient(
+        135deg,
+        rgba(76, 175, 80, 0.25) 0%,
+        rgba(139, 195, 74, 0.2) 50%,
+        rgba(205, 220, 57, 0.25) 100%
+    );
+}
+
+/* Common elements */
+.gradient-box .box-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007acc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(0, 184, 186, 0.3));
+    animation: icon-bounce 2s ease-in-out infinite;
+}
+
+.gradient-box .box-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00FFED, #007acc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-box .box-highlight {
+    background: linear-gradient(135deg, rgba(0, 255, 237, 0.3), rgba(0, 184, 186, 0.3));
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #007acc;
+    transition: all 0.2s ease;
+}
+
+.gradient-box .box-highlight:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 237, 0.5), rgba(0, 184, 186, 0.5));
+    transform: scale(1.02);
+}
+
+.gradient-box .box-quote {
+    color: var(--text-muted, #555);
+    font-style: italic;
+    background: linear-gradient(135deg, rgba(0, 184, 186, 0.1), rgba(0, 122, 204, 0.1));
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    border-left: 3px solid #00B8BA;
+    display: inline-block;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.gradient-box .box-quote:hover {
+    transform: translateX(3px);
+    background: linear-gradient(135deg, rgba(0, 184, 186, 0.2), rgba(0, 122, 204, 0.2));
+}
+
+/* Step-specific styles */
+.gradient-box .step-header {
+    background: linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007acc 100%);
+    padding: 1.5rem 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-box .step-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: header-shine 3s ease-in-out infinite;
+}
+
+.gradient-box .step-header .box-title {
+    background: linear-gradient(135deg, #ffffff, #e0f7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.4rem;
+}
+
+.gradient-box .step-body {
+    padding: 2rem;
+}
+
+.gradient-box .step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: step-counter;
+}
+
+.gradient-box .step-item {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.gradient-box .step-item:hover {
+    transform: translateX(5px);
+}
+
+.gradient-box .step-item::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007acc 100%);
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 184, 186, 0.3);
+    transition: all 0.3s ease;
+}
+
+.gradient-box .step-item:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 184, 186, 0.4);
+}
+
+/* Animations */
+@keyframes gradient-shift {
+    0%, 100% { background-position: 100% 100%, 0% 50%; }
+    50% { background-position: 100% 100%, 100% 50%; }
+}
+
+@keyframes glow-pulse {
+    0% { opacity: 0.8; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes icon-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes header-shine {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+/* Dark mode support */
+[data-mode="dark"] .gradient-box {
+    background: linear-gradient(var(--main-bg, #1b1b1e), var(--main-bg, #1b1b1e)) padding-box,
+                linear-gradient(135deg, 
+                  rgba(0, 255, 237, 1) 0%,
+                  rgba(0, 184, 186, 1.2) 50%,
+                  rgba(0, 122, 204, 1) 100%) border-box;
+    color: var(--text-color, #e5e5e5);
+}
+
+[data-mode="dark"] .gradient-box::before {
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 237, 0.4) 0%,
+        rgba(0, 184, 186, 0.35) 50%,
+        rgba(0, 122, 204, 0.4) 100%
+    );
+}
+
+[data-mode="dark"] .gradient-box .box-quote {
+    color: var(--text-muted, #b0b0b0);
+    background: linear-gradient(135deg, rgba(0, 184, 186, 0.15), rgba(0, 122, 204, 0.15));
+}
+
+[data-mode="dark"] .gradient-box .box-highlight {
+    background: linear-gradient(135deg, rgba(0, 255, 237, 0.4), rgba(0, 184, 186, 0.4));
+    color: #00FFED;
+}
+
+/* Mobile optimization */
+@media (max-width: 650px) {
+    .gradient-box {
+        margin: 1rem;
+        padding: 1.25rem;
+    }
+    
+    .gradient-box::before {
+        top: -8px; left: -8px; right: -8px; bottom: -8px;
+        filter: blur(12px);
+    }
+    
+    .gradient-box.tip-style {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .gradient-box .box-icon {
+        font-size: 1.8rem;
+        align-self: center;
+    }
+    
+    .gradient-box .step-header {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .gradient-box .step-body {
+        padding: 1.5rem;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .gradient-box,
+    .gradient-box::before,
+    .gradient-box *,
+    .gradient-box *::before {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .gradient-box:hover,
+    .gradient-box *:hover {
+        transform: none !important;
+    }
+}
