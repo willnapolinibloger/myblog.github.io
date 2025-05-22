@@ -1,0 +1,20 @@
+<!-- _includes/cta-box.html -->
+<div class="cta-container">
+  <div class="cta-wrapper">
+    <h3 class="cta-title">{{ include.title | default: "🔥Бесплатный чек-лист🔥" }}</h3>
+    <p class="cta-subtitle">
+      <strong>{{ include.subtitle | default: "«10 вопросов, чтобы понять себя в любви»" }}</strong> — {{ include.description | default: "забирай и начни лучше разбираться в своих чувствах." }}
+    </p>
+    <ul class="cta-list">
+      {% for item in include.list_items %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <a href="{{ include.link | default: 'https://t.me/will_reads' }}" target="_blank" rel="noopener" class="cta-button">
+      {{ include.button_text | default: "📥 Скачать в Telegram" }}
+    </a>
+    <p class="cta-note">
+      {{ include.note | default: "PDF, 10 продуманных вопросов — откровенно и с заботой" }}
+    </p>
+  </div>
+</div>
