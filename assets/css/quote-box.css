@@ -62,9 +62,21 @@
     font-size: 1.25rem;
     font-weight: 500;
     margin: 0 0 1rem 0;
-    color: var(--text-color, #333);
     text-align: center;
     position: relative;
+    
+    /* Gradient text effect */
+    background: linear-gradient(135deg, 
+        #00FFED 0%, 
+        #00B8BA 25%, 
+        #007ACC 50%, 
+        #0056D6 75%, 
+        #00B8BA 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: text-gradient-shift 6s ease-in-out infinite;
 }
 
 .quote-text::before {
@@ -73,8 +85,11 @@
     left: -0.5rem;
     top: -0.2rem;
     font-size: 3rem;
-    color: #00B8BA;
-    opacity: 0.4;
+    background: linear-gradient(135deg, #00B8BA, #007ACC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.6;
     font-family: Georgia, serif;
     line-height: 1;
 }
@@ -85,8 +100,11 @@
     right: -0.5rem;
     bottom: -0.8rem;
     font-size: 3rem;
-    color: #00B8BA;
-    opacity: 0.4;
+    background: linear-gradient(135deg, #00B8BA, #007ACC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.6;
     font-family: Georgia, serif;
     line-height: 1;
 }
@@ -104,7 +122,10 @@
 
 .quote-author::before {
     content: '— ';
-    color: #00B8BA;
+    background: linear-gradient(135deg, #00B8BA, #007ACC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: normal;
 }
 
@@ -123,6 +144,21 @@
     }
     50% {
         background-position: 100% 100%, 100% 50%;
+    }
+}
+
+@keyframes text-gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 200% 50%;
+    }
+    75% {
+        background-position: 100% 50%;
     }
 }
 
@@ -157,7 +193,17 @@
 }
 
 [data-mode="dark"] .quote-text {
-    color: var(--text-color, #e5e5e5);
+    background: linear-gradient(135deg, 
+        #00FFED 0%, 
+        #5DFFFF 25%, 
+        #00B8BA 50%, 
+        #40E0D0 75%, 
+        #87CEEB 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: text-gradient-shift 6s ease-in-out infinite;
 }
 
 [data-mode="dark"] .quote-context {
@@ -200,7 +246,8 @@
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
     .gradient-quote-box,
-    .gradient-quote-box::before {
+    .gradient-quote-box::before,
+    .quote-text {
         transition: none;
         animation: none;
     }
