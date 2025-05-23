@@ -1,0 +1,238 @@
+<style>
+.gradient-quote-box {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--main-bg, white);
+    font-family: inherit;
+    color: var(--text-color, #333);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    position: relative;
+    transition: transform 0.3s ease;
+    
+    /* Animated gradient border with cyan-blue colors */
+    border: 3px solid transparent;
+    background: linear-gradient(var(--main-bg, white), var(--main-bg, white)) padding-box,
+                linear-gradient(135deg, 
+                  rgba(0, 255, 237, 0.8) 0%,
+                  rgba(0, 184, 186, 1) 50%,
+                  rgba(0, 122, 204, 0.8) 100%) border-box;
+    background-size: 100% 100%, 200% 200%;
+    animation: gradient-shift 4s ease-in-out infinite;
+}
+
+.gradient-quote-box::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 237, 0.25) 0%,
+        rgba(0, 184, 186, 0.2) 50%,
+        rgba(0, 122, 204, 0.25) 100%
+    );
+    filter: blur(16px);
+    z-index: -1;
+    border-radius: 20px;
+    opacity: 0.7;
+    animation: glow-pulse 3s ease-in-out infinite alternate;
+}
+
+.gradient-quote-box:hover {
+    transform: translateY(-2px);
+}
+
+.gradient-quote-box:hover::before {
+    opacity: 1;
+    filter: blur(20px);
+}
+
+.quote-content {
+    position: relative;
+    z-index: 1;
+}
+
+.quote-text {
+    font-style: italic;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+    color: var(--text-color, #333);
+    text-align: center;
+    position: relative;
+}
+
+.quote-text::before {
+    content: '"';
+    position: absolute;
+    left: -0.5rem;
+    top: -0.2rem;
+    font-size: 3rem;
+    color: #00B8BA;
+    opacity: 0.4;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.quote-text::after {
+    content: '"';
+    position: absolute;
+    right: -0.5rem;
+    bottom: -0.8rem;
+    font-size: 3rem;
+    color: #00B8BA;
+    opacity: 0.4;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.quote-author {
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(135deg, #00B8BA, #007ACC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.quote-author::before {
+    content: '— ';
+    color: #00B8BA;
+    font-weight: normal;
+}
+
+.quote-context {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted, #666);
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+}
+
+/* Gradient animations */
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 100% 100%, 0% 50%;
+    }
+    50% {
+        background-position: 100% 100%, 100% 50%;
+    }
+}
+
+@keyframes glow-pulse {
+    0% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.01);
+    }
+}
+
+/* Dark mode compatibility */
+[data-mode="dark"] .gradient-quote-box {
+    background: linear-gradient(var(--main-bg, #1b1b1e), var(--main-bg, #1b1b1e)) padding-box,
+                linear-gradient(135deg, 
+                  rgba(0, 255, 237, 1) 0%,
+                  rgba(0, 184, 186, 1.2) 50%,
+                  rgba(0, 122, 204, 1) 100%) border-box;
+    color: var(--text-color, #e5e5e5);
+}
+
+[data-mode="dark"] .gradient-quote-box::before {
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 237, 0.3) 0%,
+        rgba(0, 184, 186, 0.25) 50%,
+        rgba(0, 122, 204, 0.3) 100%
+    );
+}
+
+[data-mode="dark"] .quote-text {
+    color: var(--text-color, #e5e5e5);
+}
+
+[data-mode="dark"] .quote-context {
+    color: var(--text-muted, #b0b0b0);
+}
+
+/* Mobile optimization */
+@media (max-width: 650px) {
+    .gradient-quote-box {
+        margin: 1rem 0;
+        padding: 1.5rem;
+    }
+
+    .gradient-quote-box::before {
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -6px;
+        filter: blur(10px);
+    }
+
+    .quote-text {
+        font-size: 1.1rem;
+    }
+
+    .quote-text::before,
+    .quote-text::after {
+        font-size: 2.5rem;
+    }
+
+    .quote-author {
+        font-size: 0.9rem;
+    }
+
+    .quote-context {
+        font-size: 0.8rem;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .gradient-quote-box,
+    .gradient-quote-box::before {
+        transition: none;
+        animation: none;
+    }
+    
+    .gradient-quote-box:hover {
+        transform: none;
+    }
+}
+</style>
+
+<!-- Usage Examples:
+
+Basic Quote:
+{% include quote-box.html 
+   text="The only way to do great work is to love what you do." 
+   author="Steve Jobs" %}
+
+Quote with Context:
+{% include quote-box.html 
+   text="Innovation distinguishes between a leader and a follower." 
+   author="Steve Jobs" 
+   context="Stanford Commencement Address, 2005" %}
+
+Long Quote:
+{% include quote-box.html 
+   text="Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work." 
+   author="Steve Jobs" 
+   context="Stanford University, June 12, 2005" %}
+
+Parameters:
+- text: The quote text (required)
+- author: The person who said the quote (required)  
+- context: Optional context like date, event, or source
+
+-->
