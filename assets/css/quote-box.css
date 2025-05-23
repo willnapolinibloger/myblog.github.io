@@ -11,8 +11,8 @@
     line-height: 1.7;
     position: relative;
     transition: transform 0.3s ease;
-    
-    /* Animated gradient border with cyan-blue colors */
+
+    /* Gradient border with animation */
     border: 3px solid transparent;
     background: linear-gradient(var(--main-bg, white), var(--main-bg, white)) padding-box,
                 linear-gradient(135deg, 
@@ -21,36 +21,33 @@
                   rgba(0, 122, 204, 0.8) 100%) border-box;
     background-size: 100% 100%, 200% 200%;
     animation: gradient-shift 4s ease-in-out infinite;
-    
-    /* Fix: Add isolation to create new stacking context */
-    isolation: isolate;
-    /* Fix: Ensure proper containment */
-    contain: layout style;
+
+    /* Fixes */
+    isolation: isolate; /* new stacking context */
+    contain: layout style; /* containment */
+    overflow: hidden; /* prevent blur from spilling */
 }
 
 .gradient-quote-box::before {
     content: '';
     position: absolute;
-    /* Fix: Reduce the negative positioning values */
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
     background: linear-gradient(
         135deg,
         rgba(0, 255, 237, 0.25) 0%,
         rgba(0, 184, 186, 0.2) 50%,
         rgba(0, 122, 204, 0.25) 100%
     );
-    filter: blur(16px);
+    filter: blur(12px);
     z-index: -1;
     border-radius: 20px;
     opacity: 0.7;
     animation: glow-pulse 3s ease-in-out infinite alternate;
-    
-    /* Fix: Add pointer-events none to prevent interaction issues */
+
     pointer-events: none;
-    /* Fix: Constrain the blur effect */
     will-change: opacity, filter;
 }
 
@@ -233,10 +230,6 @@
         filter: blur(8px);
     }
 
-    .gradient-quote-box:hover::before {
-        filter: blur(10px);
-    }
-
     .quote-text {
         font-size: 1.1rem;
     }
@@ -264,9 +257,6 @@
         animation: none;
     }
     
-    .gradient-quote-box:hover {
-        transform: none;
-    }
 }
 </style>
 
