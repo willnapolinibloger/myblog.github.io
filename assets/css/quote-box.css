@@ -21,15 +21,21 @@
                   rgba(0, 122, 204, 0.8) 100%) border-box;
     background-size: 100% 100%, 200% 200%;
     animation: gradient-shift 4s ease-in-out infinite;
+    
+    /* Fix: Add isolation to create new stacking context */
+    isolation: isolate;
+    /* Fix: Ensure proper containment */
+    contain: layout style;
 }
 
 .gradient-quote-box::before {
     content: '';
     position: absolute;
-    top: -12px;
-    left: -12px;
-    right: -12px;
-    bottom: -12px;
+    /* Fix: Reduce the negative positioning values */
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
     background: linear-gradient(
         135deg,
         rgba(0, 255, 237, 0.25) 0%,
@@ -41,6 +47,11 @@
     border-radius: 20px;
     opacity: 0.7;
     animation: glow-pulse 3s ease-in-out infinite alternate;
+    
+    /* Fix: Add pointer-events none to prevent interaction issues */
+    pointer-events: none;
+    /* Fix: Constrain the blur effect */
+    will-change: opacity, filter;
 }
 
 .gradient-quote-box:hover {
@@ -49,7 +60,8 @@
 
 .gradient-quote-box:hover::before {
     opacity: 1;
-    filter: blur(20px);
+    /* Fix: Reduce blur on hover to prevent overflow */
+    filter: blur(18px);
 }
 
 .quote-content {
@@ -92,6 +104,8 @@
     opacity: 0.6;
     font-family: Georgia, serif;
     line-height: 1;
+    /* Fix: Prevent pointer events on decorative elements */
+    pointer-events: none;
 }
 
 .quote-text::after {
@@ -107,6 +121,8 @@
     opacity: 0.6;
     font-family: Georgia, serif;
     line-height: 1;
+    /* Fix: Prevent pointer events on decorative elements */
+    pointer-events: none;
 }
 
 .quote-author {
@@ -169,7 +185,8 @@
     }
     100% {
         opacity: 1;
-        transform: scale(1.01);
+        /* Fix: Reduce scale to prevent overflow */
+        transform: scale(1.005);
     }
 }
 
@@ -218,10 +235,15 @@
     }
 
     .gradient-quote-box::before {
-        top: -6px;
-        left: -6px;
-        right: -6px;
-        bottom: -6px;
+        /* Fix: Further reduce positioning on mobile */
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        filter: blur(8px);
+    }
+
+    .gradient-quote-box:hover::before {
         filter: blur(10px);
     }
 
