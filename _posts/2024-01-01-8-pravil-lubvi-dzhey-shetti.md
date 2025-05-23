@@ -197,6 +197,7 @@ fallback:
 
 *Хочешь больше?* 
 
+---
 
 {% include cta-box.html 
 link="https://t.me/+y8vbRU0jRjJkNmY0" %}
