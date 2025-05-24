@@ -143,7 +143,7 @@
 }
 </style>
 
-<a href="{{ include.url | default: '#' }}" class="telegram-banner" target="_blank" rel="noopener" aria-label="{{ include.title | default: 'Join Our Telegram Channel' }}">
+<a href="{{ include.url | default: '#' }}" class="telegram-banner" target="_blank" rel="noopener" aria-label="{{ include.title | default: 'Join Our Telegram Channel' }}"></a>
   <div class="telegram-content">
     <h3 class="telegram-title">{{ include.title | default: "Join Our Channel" }}</h3>
     <p class="telegram-subtitle">{{ include.subtitle | default: "Get updates" }}</p>
@@ -156,4 +156,3 @@
     {{ include.cta_text | default: "JOIN" }}
   </div>
   <div class="pulse-animation"></div>
-</a>
