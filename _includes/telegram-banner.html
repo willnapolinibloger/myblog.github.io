@@ -1,9 +1,8 @@
-<a href="{{ include.url | default: 'https://t.me/your_channel' }}" 
-   class="telegram-banner" target="_blank" rel="noopener"
-   style="background: {{ include.gradient | default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}">
+<!-- _includes/telegram-banner.html -->
+<a href="{{ include.url | default: 'https://t.me/your_channel' }}" class="telegram-banner" target="_blank" rel="noopener" {% if include.gradient %}style="background: {{ include.gradient }};"{% endif %}>
     <div class="telegram-content">
         <h3 class="telegram-title">{{ include.title | default: 'Join Our Telegram Channel' }}</h3>
-        <p class="telegram-subtitle">{{ include.subtitle | default: 'Get exclusive content and updates' }}</p>
+        <p class="telegram-subtitle">{{ include.subtitle | default: 'Get exclusive content, updates, and insights delivered directly to you' }}</p>
     </div>
     <div class="telegram-cta">
         <svg class="telegram-icon" viewBox="0 0 24 24">
