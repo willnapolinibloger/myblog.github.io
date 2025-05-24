@@ -199,6 +199,10 @@ fallback:
 ---
 
 {% include cta-box.html 
-link="https://t.me/+y8vbRU0jRjJkNmY0" %}
+   link="https://t.me/+y8vbRU0jRjJkNmY0"
+   title="🔥Бесплатный чек-лист🔥"
+   subtitle="«10 вопросов, чтобы понять себя в любви»" 
+%}
+
 
 ---
