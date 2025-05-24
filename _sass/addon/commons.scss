@@ -1,5 +1,4 @@
 /* The common styles */
-@import 'telegram-banner';
 
 html {
   @media (prefers-color-scheme: light) {
@@ -1780,3 +1779,6 @@ search {
     left: -100%;
   }
 }
+
+/* _sass/addon/commons.scss */
+@import "telegram-banner";
