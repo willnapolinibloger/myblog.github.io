@@ -1914,10 +1914,29 @@ search {
 }
 
 /* Dark mode support for Jekyll Chirpy */
-[data-bs-theme="dark"] .telegram-banner {
+[data-mode="dark"] .telegram-banner {
     box-shadow: 0 8px 32px rgba(0, 255, 237, 0.2);
+    /* Slightly darker gradient for better contrast on dark backgrounds */
+    background: linear-gradient(135deg, #00e0cc 0%, #009b9c 50%, #005f99 100%);
 }
 
-[data-bs-theme="dark"] .telegram-banner:hover {
+[data-mode="dark"] .telegram-banner:hover {
     box-shadow: 0 12px 40px rgba(0, 255, 237, 0.3);
+}
+
+[data-mode="dark"] .telegram-title,
+[data-mode="dark"] .telegram-subtitle {
+    /* Ensure text remains readable */
+    color: #e5e5e5;
+    opacity: 1;
+}
+
+[data-mode="dark"] .telegram-cta {
+    /* Adjust CTA button for better visibility */
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+[data-mode="dark"] .telegram-cta:hover {
+    background: rgba(255, 255, 255, 0.35);
 }
