@@ -63,7 +63,14 @@ fallback:
 
 ---
 
-{% include telegram-banner.html %}
+{% raw %}
+{% include telegram-banner.html 
+   url="https://t.me/will_reads"
+   title="⚡ Контент, которого нет в открытом доступе"
+   subtitle="Инсайты, туториалы и материалы только для подписчиков канала"
+   cta_text="ВОЙТИ В КАНАЛ"
+%}
+{% endraw %}
 
 ---
 
