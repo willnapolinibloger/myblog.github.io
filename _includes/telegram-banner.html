@@ -1,14 +1,158 @@
 <!-- _includes/telegram-banner.html -->
-<a href="{{ include.url | default: 'https://t.me/will_reads' }}" class="telegram-banner" target="_blank" rel="noopener" {% if include.gradient %}style="background: {{ include.gradient }};"{% endif %}>
+<style>
+.telegram-banner {
+    background: {{ include.gradient | default: "linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007acc 100%)" }};
+    border-radius: 16px;
+    padding: 24px;
+    margin: 32px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 255, 237, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+.telegram-banner:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 255, 237, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+.telegram-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 2px, transparent 2px),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,0.1) 1.5px, transparent 1.5px),
+                radial-gradient(circle at 60% 70%, rgba(255,255,255,0.1) 1px, transparent 1px),
+                radial-gradient(circle at 30% 80%, rgba(255,255,255,0.1) 1.5px, transparent 1.5px);
+    pointer-events: none;
+}
+
+.telegram-content {
+    flex: 1;
+    z-index: 2;
+    position: relative;
+}
+
+.telegram-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+}
+
+.telegram-subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+    margin: 0;
+    font-weight: 400;
+}
+
+.telegram-cta {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 140px;
+    justify-content: center;
+}
+
+.telegram-cta:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.telegram-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.pulse-animation {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(-50%) scale(1.4);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .telegram-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .telegram-title {
+        font-size: 20px;
+    }
+    
+    .telegram-subtitle {
+        font-size: 14px;
+    }
+    
+    .pulse-animation {
+        display: none;
+    }
+}
+
+/* Chirpy dark mode compatibility */
+[data-bs-theme="dark"] .telegram-banner {
+    box-shadow: 0 8px 32px rgba(0, 255, 237, 0.2);
+}
+
+[data-bs-theme="dark"] .telegram-banner:hover {
+    box-shadow: 0 12px 40px rgba(0, 255, 237, 0.3);
+}
+</style>
+
+<a href="{{ include.url | default: '#' }}" class="telegram-banner" target="_blank" rel="noopener">
     <div class="telegram-content">
-        <h3 class="telegram-title">{{ include.title | default: 'Join Our Telegram Channel' }}</h3>
-        <p class="telegram-subtitle">{{ include.subtitle | default: 'Get exclusive content, updates, and insights delivered directly to you' }}</p>
+        <h3 class="telegram-title">{{ include.title | default: "⚡ Контент, которого нет в открытом доступе" }}</h3>
+        <p class="telegram-subtitle">{{ include.subtitle | default: "Инсайты, туториалы и материалы только для подписчиков канала" }}</p>
     </div>
     <div class="telegram-cta">
         <svg class="telegram-icon" viewBox="0 0 24 24">
             <path d="M9.78 18.65L10.06 14.42L17.74 7.5C18.08 7.19 17.67 7.04 17.22 7.31L7.74 13.3L3.64 12C2.76 11.75 2.75 11.14 3.84 10.7L19.81 4.54C20.54 4.21 21.24 4.72 20.96 5.84L18.24 18.65C18.05 19.56 17.5 19.78 16.74 19.36L12.6 16.3L10.61 18.23C10.38 18.46 10.19 18.65 9.78 18.65Z"/>
         </svg>
-        {{ include.cta_text | default: 'JOIN NOW' }}
+        {{ include.cta_text | default: "ВОЙТИ В КАНАЛ" }}
     </div>
     <div class="pulse-animation"></div>
 </a>
