@@ -1,4 +1,4 @@
-// Telegram Banner Styles
+// Telegram Banner Styles with Improved Theme Support
 .telegram-banner-wrapper {
   .telegram-banner {
     background: linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007acc 100%);
@@ -13,15 +13,27 @@
     box-shadow: 0 8px 32px rgba(0, 255, 237, 0.3);
     transition: all 0.3s ease;
     text-decoration: none;
-    color: white;
-
+    
+    // Ensure white text for optimal contrast
+    color: #ffffff !important;
+    
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 40px rgba(0, 255, 237, 0.4);
       text-decoration: none;
-      color: white;
+      color: #ffffff !important;
     }
-
+    
+    &:visited {
+      color: #ffffff !important;
+    }
+    
+    &:focus {
+      color: #ffffff !important;
+      outline: 2px solid rgba(255, 255, 255, 0.5);
+      outline-offset: 2px;
+    }
+    
     &::before {
       content: '';
       position: absolute;
@@ -34,32 +46,34 @@
       pointer-events: none;
     }
   }
-
+  
   .telegram-content {
     flex: 1;
     z-index: 2;
     position: relative;
   }
-
+  
   .telegram-title {
     font-size: 24px;
     font-weight: 700;
     margin: 0 0 8px 0;
     line-height: 1.2;
+    color: #ffffff !important; // Explicit white for maximum contrast
   }
-
+  
   .telegram-subtitle {
     font-size: 16px;
-    opacity: 0.9;
+    opacity: 0.95; // Slightly higher opacity for better readability
     margin: 0;
     font-weight: 400;
+    color: #ffffff !important; // Explicit white for maximum contrast
   }
-
+  
   .telegram-cta {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
+    color: #ffffff !important; // Explicit white for CTA button
     padding: 12px 24px;
     border-radius: 50px;
     font-weight: 600;
@@ -70,19 +84,20 @@
     white-space: nowrap;
     min-width: 140px;
     justify-content: center;
-
+    
     &:hover {
       background: rgba(255, 255, 255, 0.3);
       transform: scale(1.05);
+      color: #ffffff !important; // Maintain white on hover
     }
   }
-
+  
   .telegram-icon {
     width: 20px;
     height: 20px;
     fill: currentColor;
   }
-
+  
   .pulse-animation {
     position: absolute;
     right: 20px;
@@ -94,7 +109,7 @@
     border-radius: 50%;
     animation: telegram-pulse 2s infinite;
   }
-
+  
   @keyframes telegram-pulse {
     0% {
       transform: translateY(-50%) scale(1);
@@ -109,7 +124,7 @@
       opacity: 0;
     }
   }
-
+  
   @media (max-width: 768px) {
     .telegram-banner {
       flex-direction: column;
@@ -132,13 +147,99 @@
   }
 }
 
-// Dark mode support
+// Dark theme support - Enhanced
 [data-bs-theme="dark"] {
   .telegram-banner-wrapper .telegram-banner {
-    box-shadow: 0 8px 32px rgba(0, 255, 237, 0.2);
-
+    // Slightly adjusted gradient for better dark theme compatibility
+    background: linear-gradient(135deg, #00E6D9 0%, #00A5A7 50%, #006B99 100%);
+    box-shadow: 0 8px 32px rgba(0, 230, 217, 0.2);
+    
+    // Ensure white text is preserved in dark theme
+    color: #ffffff !important;
+    
     &:hover {
-      box-shadow: 0 12px 40px rgba(0, 255, 237, 0.3);
+      box-shadow: 0 12px 40px rgba(0, 230, 217, 0.3);
+      color: #ffffff !important;
+    }
+    
+    &:visited {
+      color: #ffffff !important;
+    }
+    
+    &:focus {
+      color: #ffffff !important;
+      outline: 2px solid rgba(255, 255, 255, 0.6);
+    }
+    
+    // Ensure all text elements remain white in dark theme
+    .telegram-title {
+      color: #ffffff !important;
+    }
+    
+    .telegram-subtitle {
+      color: #ffffff !important;
+      opacity: 0.95;
+    }
+    
+    // Adjust pulse animation for dark theme
+    .pulse-animation {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
+    // CTA button adjustments for dark theme
+    .telegram-cta {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff !important;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.25);
+        color: #ffffff !important;
+      }
+    }
+  }
+}
+
+// Light theme explicit support (optional, for clarity)
+[data-bs-theme="light"] {
+  .telegram-banner-wrapper .telegram-banner {
+    // Original bright gradient for light theme
+    background: linear-gradient(135deg, #00FFED 0%, #00B8BA 50%, #007acc 100%);
+    box-shadow: 0 8px 32px rgba(0, 255, 237, 0.3);
+    color: #ffffff;
+    
+    &:hover {
+      box-shadow: 0 12px 40px rgba(0, 255, 237, 0.4);
+      color: #ffffff;
+    }
+    
+    &:visited {
+      color: #ffffff;
+    }
+  }
+}
+
+// Fallback for systems without theme detection
+@media (prefers-color-scheme: dark) {
+  .telegram-banner-wrapper .telegram-banner {
+    background: linear-gradient(135deg, #00C9B8 0%, #008A8C 50%, #005A99 100%);
+    box-shadow: 0 8px 32px rgba(0, 201, 184, 0.2);
+    
+    &:hover {
+      box-shadow: 0 12px 40px rgba(0, 201, 184, 0.3);
+    }
+    
+    .pulse-animation {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
+    .telegram-cta {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
     }
   }
 }
