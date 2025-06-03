@@ -1,15 +1,3 @@
-<div align="center">
-
-  # Chirpy Jekyll Theme
-
-  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
-
-  [![Demo](https://img.shields.io/badge/Demo-Click%20Here-3aa2f1?style=for-the-badge&logo=jekyll&logoColor=white)](https://docs.digitalden.cloud)
-
-<img src="assets/img/headers/jekyll2.webp" alt="Devices Mockup">
-
-</div>
-
 ## Features
 
 - Dark / Light Theme Mode
@@ -30,25 +18,6 @@
 - PWA
 - Google Analytics / GoatCounter
 - SEO & Performance Optimization
-
-## Getting Started
-
-To set up and deploy your own documentation site using Jekyll and the Chirpy theme, check out these resources:
-
-[![Setup Guide](https://img.shields.io/badge/Setup%20Guide-Read%20Here-blue?style=for-the-badge)](https://docs.digitalden.cloud/posts/set-up-and-deploy-a-documentation-site-with-jekyll-and-chirpy-on-aws-cloud9/)
-[![Video Tutorial](https://img.shields.io/badge/Video%20Tutorial-Watch%20Now-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=7cLkDE8_tCI&t=17s)
-
-
-You will learn how to:
-- Launch and prepare the AWS Cloud9 environment.
-- Set up the development environment for Jekyll with Chirpy on Cloud9.
-- Configure Git and SSH for GitHub integration.
-- Install and set up the Chirpy theme using the Chirpy starter template.
-- Create and run a start script to preview your site in Cloud9.
-- Deploy the site to GitHub Pages using GitHub Actions.
-- Personalize the Jekyll site configuration and the "About Me" page.
-- Write your first post with Chirpy using Markdown syntax.
-- (Optional) Map a custom domain to your GitHub Pages site.
 
 ## License
 
